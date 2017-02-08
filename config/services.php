@@ -33,6 +33,10 @@ return [
         'model' => App\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
+    ],
+    'firebase' => [
+      'base_url' => 'https://pacials-7d1b9.firebaseio.com/',
+      'token' => 'WuFifAhbeQaBeGMJHArCoov63yKgEaptYVWY6xoC'
     ]
 
 ];

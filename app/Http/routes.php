@@ -14,7 +14,7 @@ Route::get('/', function () {
     return view('home');
 })->middleware('auth');
 
-Route::post('storage/create', 'ImageController@upload');
+Route::post('storage/create', 'HttpController@upload');
 
 
 Route::post('login', [
@@ -34,15 +34,22 @@ Route::get('login', [
 	'uses' => 'Auth\AuthController@showLoginForm'
 ]);
 
-Route::get('morepruebas', [
-	'as' => 'notifications',
-	'uses' => 'ImageController@token'
-]);
-Route::post('addtoken', [
-	'as' => 'token',
-	'uses' => 'ImageController@addtoken'
+Route::get('morepruebas{id}', [
+	'as' => 'notificationsgood',
+	'uses' => 'RequestController@deito'
 ]);
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('nomorepruebas/{id}', [
+	'as' => 'notificationsbad',
+	'uses' => 'RequestController@nodeito'
+]);
+
+Route::post('addtoken', [
+	'as' => 'token',
+	'uses' => 'HttpController@addtoken'
+]);
+
+Route::get('listarSolicitud',[
+	'as' => 'listRequest',
+	'uses' => 'RequestController@listRequest'
+]);

@@ -56,7 +56,7 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                     @else
-                        <li><a href="{{ route('notifications') }}">Notificaciones</a></li>
+                        <li><a href="{{ route('listRequest') }}">Solicitudes</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
